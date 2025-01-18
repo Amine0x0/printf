@@ -6,7 +6,7 @@
 /*   By: amabbadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 08:24:46 by amabbadi          #+#    #+#             */
-/*   Updated: 2025/01/16 08:31:03 by amabbadi         ###   ########.fr       */
+/*   Updated: 2025/01/19 00:25:09 by amabbadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 int	ft_putptr(void *ptr)
 {
 	unsigned long	address;
-	char			hex_chars[16];
+	char			*hex_chars;
 	char			buffer[20];
 	int				count;
 	int				i;
 
-	hex_chars = "123456789abcdef";
+	hex_chars = "0123456789abcdef";
 	count = 0;
 	i = 0;
 	if (!ptr)
@@ -41,7 +41,7 @@ int	ft_putptr(void *ptr)
 
 int	ft_putx(unsigned int num)
 {
-	char	hex_chars[16];
+	char	*hex_chars;
 	char	buffer[8];
 	int		count;
 	int		i;
@@ -66,7 +66,7 @@ int	ft_putx(unsigned int num)
 
 int	ft_putxa(unsigned int num)
 {
-	char	hex_chars[16];
+	char	*hex_chars;
 	char	buffer[8];
 	int		count;
 	int		i;
