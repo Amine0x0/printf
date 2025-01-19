@@ -6,7 +6,7 @@
 /*   By: amabbadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 08:10:54 by amabbadi          #+#    #+#             */
-/*   Updated: 2025/01/19 00:15:36 by amabbadi         ###   ########.fr       */
+/*   Updated: 2025/01/19 22:38:42 by amabbadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include <stdlib.h>
 # include <unistd.h>
 
 int	ft_printf(const char *input, ...);
