@@ -6,7 +6,7 @@
 /*   By: amabbadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 08:24:46 by amabbadi          #+#    #+#             */
-/*   Updated: 2025/01/22 04:04:18 by amabbadi         ###   ########.fr       */
+/*   Updated: 2025/01/23 00:53:34 by amabbadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_putptr(void *ptr)
 		buffer[i++] = hex_chars[address % 16];
 		address /= 16;
 	}
-	while (--i >= 0)
+	while (i > 0)
 		count += ft_putchar(buffer[i]);
 	return (count);
 }
@@ -59,7 +59,7 @@ int	ft_putx(unsigned int num)
 		buffer[i++] = hex_chars[num % 16];
 		num /= 16;
 	}
-	while (--i >= 0)
+	while (i > 0)
 		count += ft_putchar(buffer[i]);
 	return (count);
 }
@@ -84,7 +84,7 @@ int	ft_putxa(unsigned int num)
 		buffer[i++] = hex_chars[num % 16];
 		num /= 16;
 	}
-	while (--i >= 0)
+	while (i > 0)
 		count += ft_putchar(buffer[i]);
 	return (count);
 }
