@@ -6,7 +6,7 @@
 /*   By: amabbadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 08:09:40 by amabbadi          #+#    #+#             */
-/*   Updated: 2025/01/19 00:25:24 by amabbadi         ###   ########.fr       */
+/*   Updated: 2025/01/22 04:02:07 by amabbadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	ft_printf(const char *input, ...)
 	const char	*ptr;
 	char		spec;
 
+	if (!input)
+		return (-1);
 	count = 0;
 	va_start(args, input);
 	ptr = input;
@@ -56,8 +58,6 @@ int	ft_printf(const char *input, ...)
 			spec = *ptr;
 			count += handle_specifier(spec, args);
 		}
-		else if (*ptr == '%' && !*(ptr + 1))
-			break ;
 		else
 			count += ft_putchar(*ptr);
 		ptr++;

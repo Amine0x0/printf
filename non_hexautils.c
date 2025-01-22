@@ -6,7 +6,7 @@
 /*   By: amabbadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 08:10:38 by amabbadi          #+#    #+#             */
-/*   Updated: 2025/01/19 00:16:24 by amabbadi         ###   ########.fr       */
+/*   Updated: 2025/01/22 04:07:24 by amabbadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,23 +56,11 @@ int	ft_putnbr(int n)
 
 int	ft_putuint(unsigned int num)
 {
-	char	buffer[10];
-	int		count;
-	int		i;
+	int	count;
 
 	count = 0;
-	i = 0;
-	if (num == 0)
-	{
-		ft_putchar('0');
-		return (1);
-	}
-	while (num > 0)
-	{
-		buffer[i++] = '0' + (num % 10);
-		num /= 10;
-	}
-	while (--i >= 0)
-		count += ft_putchar(buffer[i]);
+	if (num >= 10)
+		count += ft_putuint(num / 10);
+	count += ft_putchar((num % 10) + '0');
 	return (count);
 }
