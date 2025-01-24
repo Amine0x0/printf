@@ -6,11 +6,17 @@
 /*   By: amabbadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 08:09:40 by amabbadi          #+#    #+#             */
-/*   Updated: 2025/01/22 04:02:07 by amabbadi         ###   ########.fr       */
+/*   Updated: 2025/01/24 23:41:59 by amabbadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+void	spec_err(int *count, char spec)
+{
+	*count += ft_putchar('%');
+	*count += ft_putchar(spec);
+}
 
 int	handle_specifier(char specifier, va_list args)
 {
@@ -33,6 +39,8 @@ int	handle_specifier(char specifier, va_list args)
 		count += ft_putchar('%');
 	else if (specifier == 'p')
 		count += ft_putptr(va_arg(args, void *));
+	else
+		spec_err(&count, specifier);
 	return (count);
 }
 
@@ -41,7 +49,6 @@ int	ft_printf(const char *input, ...)
 	va_list		args;
 	int			count;
 	const char	*ptr;
-	char		spec;
 
 	if (!input)
 		return (-1);
@@ -49,14 +56,15 @@ int	ft_printf(const char *input, ...)
 	va_start(args, input);
 	ptr = input;
 	if (write(1, "", 0) < 0)
-		return (-1);
+		return (va_end(args), -1);
 	while (*ptr)
 	{
-		if (*ptr == '%' && *(ptr + 1))
+		if (*ptr == '%')
 		{
 			ptr++;
-			spec = *ptr;
-			count += handle_specifier(spec, args);
+			if (!*ptr)
+				return (va_end(args), -1);
+			count += handle_specifier(*ptr, args);
 		}
 		else
 			count += ft_putchar(*ptr);
