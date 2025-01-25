@@ -6,7 +6,7 @@
 /*   By: amabbadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 08:24:46 by amabbadi          #+#    #+#             */
-/*   Updated: 2025/01/24 23:19:35 by amabbadi         ###   ########.fr       */
+/*   Updated: 2025/01/25 02:28:54 by amabbadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_putptr(void *ptr)
 	count = 0;
 	i = 0;
 	if (!ptr)
-		return (ft_putstr("0x0"));
+		return (ft_putstr("(nil)"));
 	address = (unsigned long)ptr;
 	count += ft_putstr("0x");
 	if (address == 0)
@@ -42,7 +42,7 @@ int	ft_putptr(void *ptr)
 int	ft_putx(unsigned int num)
 {
 	char	*hex_chars;
-	char	buffer[16];
+	char	buffer[8];
 	int		count;
 	int		i;
 
@@ -67,7 +67,7 @@ int	ft_putx(unsigned int num)
 int	ft_putxa(unsigned int num)
 {
 	char	*hex_chars;
-	char	buffer[16];
+	char	buffer[8];
 	int		count;
 	int		i;
 
