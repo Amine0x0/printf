@@ -6,17 +6,11 @@
 /*   By: amabbadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 08:09:40 by amabbadi          #+#    #+#             */
-/*   Updated: 2025/01/24 23:41:59 by amabbadi         ###   ########.fr       */
+/*   Updated: 2025/01/26 08:08:39 by amine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-void	spec_err(int *count, char spec)
-{
-	*count += ft_putchar('%');
-	*count += ft_putchar(spec);
-}
 
 int	handle_specifier(char specifier, va_list args)
 {
@@ -40,7 +34,7 @@ int	handle_specifier(char specifier, va_list args)
 	else if (specifier == 'p')
 		count += ft_putptr(va_arg(args, void *));
 	else
-		spec_err(&count, specifier);
+		count += ft_putchar(spec);
 	return (count);
 }
 

@@ -6,7 +6,7 @@
 /*   By: amabbadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 08:24:46 by amabbadi          #+#    #+#             */
-/*   Updated: 2025/01/25 02:28:54 by amabbadi         ###   ########.fr       */
+/*   Updated: 2025/01/26 08:09:04 by amine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_putptr(void *ptr)
 	count = 0;
 	i = 0;
 	if (!ptr)
-		return (ft_putstr("(nil)"));
+		return (ft_putstr("0x0"));
 	address = (unsigned long)ptr;
 	count += ft_putstr("0x");
 	if (address == 0)
