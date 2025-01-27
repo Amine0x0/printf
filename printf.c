@@ -6,13 +6,13 @@
 /*   By: amabbadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 08:09:40 by amabbadi          #+#    #+#             */
-/*   Updated: 2025/01/26 08:08:39 by amine            ###   ########.fr       */
+/*   Updated: 2025/01/27 08:56:09 by amabbadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	handle_specifier(char specifier, va_list args)
+static int	handle_specifier(char specifier, va_list args)
 {
 	int	count;
 
@@ -34,7 +34,7 @@ int	handle_specifier(char specifier, va_list args)
 	else if (specifier == 'p')
 		count += ft_putptr(va_arg(args, void *));
 	else
-		count += ft_putchar(spec);
+		count += ft_putchar(specifier);
 	return (count);
 }
 
